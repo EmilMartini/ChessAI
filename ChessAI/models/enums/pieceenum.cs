@@ -1,0 +1,1 @@
+public enum Type {Rook, Queen, King}
