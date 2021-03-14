@@ -48,3 +48,31 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+    .container {
+        background: black;
+        display: inline-block;
+        border: 5px solid black;
+        max-height: 80vh;
+        width: 80vh;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(8, 9vh);
+        grid-template-rows: repeat(8, 9vh);
+        grid-gap: 5px;
+      }
+
+      .cell {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-family: Arial;
+        font-size: 1rem;
+        font-weight: bold;
+        /* background: white; */
+      }
+
+      .cell :hover {
+          background: grey;
+      }

@@ -1,0 +1,14 @@
+@page "/chess"
+
+<h1>Chess AI</h1>
+<div class="container">
+    <div class="grid">
+        @foreach (var tile in board.Tiles)
+        {
+            <div class="cell" style="background: @tile.Color"></div>
+        }
+    </div>
+</div>
+@code {
+    Board board = new Board(8);
+}
