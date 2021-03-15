@@ -1,14 +1,38 @@
 @page "/chess"
+@using ChessAI
+@using System.Linq
 
 <h1>Chess AI</h1>
 <div class="container">
     <div class="grid">
-        @foreach (var tile in board.Tiles)
+        @for (int y = 0; y < manager.Board.Tiles.GetLength(0); y++)
         {
-            <div class="cell" style="background: @tile.Color"></div>
+            @for (int x = 0; x < manager.Board.Tiles.GetLength(1); x++)
+            {  
+            <div id="@manager.Board.Tiles[y, x].X, @manager.Board.Tiles[y, x].Y" class="cell" style="background: @manager.Board.Tiles[y, x].Color">
+                @{
+                    string type = "";
+                    if(manager.BlackPieces.Where(i => i.StandingTile == manager.Board.Tiles[y,x]).ToList().FirstOrDefault() != null){
+                        type = manager.BlackPieces.Where(i => i.StandingTile == manager.Board.Tiles[y,x]).ToList().FirstOrDefault().Type.ToString();
+                    } 
+                    else if(manager.WhitePieces.Where(i => i.StandingTile == manager.Board.Tiles[y,x]).ToList().FirstOrDefault() != null)
+                    {
+                        type = manager.WhitePieces.Where(i => i.StandingTile == manager.Board.Tiles[y,x]).ToList().FirstOrDefault().Type.ToString();
+                    }
+                }                 
+                @type
+            </div>
+            }
         }
     </div>
 </div>
+
 @code {
-    Board board = new Board(8);
+    GameplayManager manager;
+    protected override void OnInitialized()
+    {
+        manager = new GameplayManager();
+        manager.CreateGame();
+        base.OnInitialized();
+    }
 }

@@ -1,1 +1,1 @@
-public enum Type {Rook, Queen, King}
+public enum Type {Rook, Queen, King, Pawn, Bishop, Knight}

@@ -9,7 +9,7 @@ namespace ChessAI
         public string Color { get; private set; }
         public bool IsEmpty { get; set; }
 
-        public Tile(byte x, byte y)
+        public Tile(byte y, byte x)
         {
             this.X = x;
             this.Y = y;
