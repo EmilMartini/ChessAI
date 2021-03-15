@@ -13,7 +13,7 @@ namespace ChessAI
         {
             this.X = x;
             this.Y = y;
-            this.Color = (x + y) % 2 == 1 ? "Black" : "White";
+            this.Color = (x + y) % 2 == 1 ? "#769656" : "#eeeed2";
         }
     }
 }

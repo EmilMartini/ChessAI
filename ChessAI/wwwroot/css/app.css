@@ -50,9 +50,7 @@ a, .btn-link {
     }
 
     .container {
-        background: black;
         display: inline-block;
-        border: 5px solid black;
         max-height: 80vh;
         width: 80vh;
     }
@@ -73,6 +71,6 @@ a, .btn-link {
         /* background: white; */
       }
 
-      .cell :hover {
+      .cell:hover {
           background: grey;
       }
